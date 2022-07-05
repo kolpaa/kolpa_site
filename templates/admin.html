@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>kolpa</title>
+    <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png')}}">
+    <link type="text/css" href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+  </head>
+  
+  <body>
+    <section id="header" aria-label="Home">
+      <a href="/" title="Home">
+        <pre>
+ _   |~  _
+[_]--'--[_]
+|'|""`""|'|
+| | /^\ | |
+|_|_|I|_|_|
+        </pre>
+    </a>
+  
+      </section>
+      
+        <section id="menu">
+          <p id="test">
+            <a href="/">главная</a> | <a href="/blog">блог</a> | <a href="/resume">резюме</a>
+  
+          </p>
+          
+        </section>
+        {% if not admin %}
+        <section style="text-align: center; font-size:200%;">     
+          Активировать админ панель:
+      </section>
+      <br>   
+        <section id="simple_block">
+          <form action="/admin" method="post" class="form-contact">
+            <p><label>Пароль: </label> <input type="password" name="password" value="" requied /> </p>
+            <p><input type="submit" value="Войти" /> </p>
+            </form>
+        </section>
+
+        {% else %}
+        <center>
+          <section style="text-align: center; font-size:200%;">     
+            Вы админ
+        </section>
+        <br>   
+        <section id="simple_block">
+          <a href="../static/kolpa.db" download>Скачать базу данных</a>
+
+          </section>
+        <section id="simple_block">
+          <form action="/admin" method="post" class="form-contact">
+            <p><input type="submit" value="Выйти" /> </p>
+            </form>
+        </section>
+        </center>
+        
+        {% endif %}
+    
+  </body>
+</html>
