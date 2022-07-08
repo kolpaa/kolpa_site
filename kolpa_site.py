@@ -82,8 +82,6 @@ def showPost(url):
 def blog():
     search = ''
     sort = 'Новые'
-    if 'admin' not in session:
-        session['admin'] = False
     if request.method  == 'POST' and session['admin'] and request.form.get('post') != None:
         if request.form['title'] != "" and request.form['content'] != "" and request.form['url'] != "":
             if os.path.isdir('static/files/posts_res/' + request.form['url']) :
@@ -190,11 +188,6 @@ def delete_book(id):
 @app.errorhandler(404)
 def pageNotFound(error):
     return render_template('404.html'), 404
-
-@app.before_first_request
-def before_first_request():
-    if 'admin' not in session:
-            session['admin'] = False
 
 @app.before_request
 def before_request():
