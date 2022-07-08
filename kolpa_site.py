@@ -1,6 +1,5 @@
 from crypt import methods
 from distutils.log import debug
-from attr import field
 from flask import Flask, render_template, url_for, request, session, redirect, g, flash
 import os, sqlite3, re
 from FDataBase import FDataBase
@@ -26,7 +25,6 @@ def get_db():
         g.link_db = connect_db()
     return g.link_db
 
-@app.route("/home")
 @app.route("/")
 def home():
     return render_template('index.html')
@@ -84,6 +82,8 @@ def showPost(url):
 def blog():
     search = ''
     sort = 'Новые'
+    if 'admin' not in session:
+        session['admin'] = False
     if request.method  == 'POST' and session['admin'] and request.form.get('post') != None:
         if request.form['title'] != "" and request.form['content'] != "" and request.form['url'] != "":
             if os.path.isdir('static/files/posts_res/' + request.form['url']) :
@@ -201,6 +201,8 @@ def before_request():
    global dbase
    db = get_db()
    dbase = FDataBase(db)
+   if 'admin' not in session:
+       session['admin'] = False
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
