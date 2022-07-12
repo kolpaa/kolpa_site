@@ -35,7 +35,7 @@ class FDataBase:
         return []
 
     def getCatData(self):
-        sql = '''SELECT rowid, * FROM cat'''
+        sql = '''SELECT rowid, * FROM cat ORDER BY rowid DESC'''
         try:
             self.__cur.execute(sql)
             res = self.__cur.fetchall()
