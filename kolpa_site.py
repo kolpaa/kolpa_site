@@ -69,7 +69,6 @@ def cat():
 
 @app.route("/blog/<url>", methods=["POST", "GET"])
 def showPost(url):
-    dbase.addVisit(url)
     if request.method == "POST":
         if request.form['comment'] != '':           
             dbase.addComment(request.form['comment'], int(session['admin']), 0, url)
@@ -196,6 +195,7 @@ def before_request():
    dbase = FDataBase(db)
    if 'admin' not in session:
        session['admin'] = False
+   
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
