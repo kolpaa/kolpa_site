@@ -107,6 +107,10 @@ def blog():
 def resume():
     return render_template('resume.html') 
 
+@app.route("/vpn")
+def vpn():
+    return render_template('vpn.html') 
+
 @app.route("/books", methods=["POST", "GET"])
 def books():
     if request.method == 'POST' and session['admin']:

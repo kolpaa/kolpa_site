@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>kolpa</title>
+    <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.png')}}">
+    <link type="text/css" href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+
+  </head>
+  <body>
+    
+
+    <section id="header" aria-label="Home">
+      <a href="/" title="Home">
+      <pre>
+__   ___ __  _ __  
+\ \ / / '_ \| '_ \ 
+ \ V /| |_) | | | |
+  \_/ | .__/|_| |_|
+      | |          
+ |_|     
+      </pre>
+	</a>
+
+    </section>
+    
+      <section id="menu">
+        <p id="test">
+          <a href="/">главная</a> | <a href="/blog">блог</a> | <a href="/resume">резюме</a>
+
+        </p>
+        
+      </section>   
+      <section id="ahah">
+        <section style="text-align: left; display: inline-block; width: 25%; color: #717171">
+        </section>
+        <section style="text-align: center; display: inline-block; width:50%; font-size:150%; font-weight: bold;">
+          Инструкция по подключению к моему VPN серверу
+        </section>
+        <section style="text-align: right; display: inline-block; width:20%; color: #717171">
+        </section>
+      </section>
+
+  <section id="post">
+    <ul id="stuff">
+      <li>
+        <a href="https://www.wireguard.com/install/" target="_blank">Скачайте</a> клиент WireGuard на утсройство, с которого хотите подключиться
+      </li>
+      <br>
+      <li>
+        Скачайте конфиг(и) ниже на этой странице, а лучше  напишите 
+        мне в <a href="https://t.me/trjrjj" target="_blank">телеграм</a>, чтобы я сделал его персонально для вас. Дело в том, что один конфиг можно использовать одновременно только на 1 устройстве, 
+        поэтому, чтобы гарантированно избежать ситуаций, когда два человека одновременно включают vpn с одним и тем же конфигом, нужно иметь свой персональный.
+      </li>
+      <br>
+      <li>
+        Откройте клиент WireGuard и выберите конфиг, который вы скачали
+      </li>
+      <br>
+      <li>
+        Теперь вы подключились к VPN, погладьте себя по голове
+      </li>
+    </ul>
+    <center>
+      <p style="text-align: center; display: inline-block; font-size:150%;">
+        Зачем нужен мой VPN, когда есть другие?
+      </p>
+    </center>
+    <ul id="stuff">
+      <li>
+        Его <span style="font-weight: bold; color: #458588;">НЕ ЗАБЛОКИРУЮТ</span> по нескольким причинам:
+        <ul id="stuff">
+          <li>
+            Протокол WireGuard является технологией с открытым исходным кодом, его используют многие организации для создания частной сети (российские в том числе)
+          </li>
+          <li>
+            Прервать работу VPN можно только если закроется хостер (компания в Литве, у которой я арендую сервер). Это крайне маловерятно, так как эта компания работает еще с 2005 года
+          </li>
+          <li>
+            Даже в случае закрытия хостера, мне не составит труда арендовать другой сервер у другого хостера
+          </li>
+          <li>
+            О существовании моего VPN сервера навряд ли кто-то вообще узнает)
+          </li>
+        </ul>
+      </li>
+      <br>
+      <li>
+        Вам <span style="font-weight: bold; color: #458588;">НЕ НУЖНО ЗАХЛАМЛЯТЬ</span> свои устройства проприетарными VPN решениями, которые не дают возможности видеть, как они функционируют, какие данные собирают и тд.
+        Клиентское приложние WireGuard - это ПО с открытым исходным кодом, которое ничего не скрывает от своих пользователей.
+      </li>
+      <br>
+      <li>
+        Вам <span style="font-weight: bold; color: #458588;">НЕ НУЖНО БЕСПОКОИТЬСЯ</span> о приватности своих данных. При запросе, я дам вам SSH доступ к моему VPN серверу, чтобы вы могли убедиться в отсутствии утаивания чего-либо.
+      </li>
+      <br>
+      <li>
+        Вы можете пользоваться VPN совершенно <span style="font-weight: bold; color: #458588;">БЕСПЛАТНО</span>, но я буду очень благодарен, если вы поможете мне платить за аренду сервера, на котором всё это крутится:
+        <br>
+        <br>
+        <ul id="stuff">
+              <li>
+                BTC: bc1q9qzjmtxcjhsmn64fzedl8yu2ez3yettt242j36
+              </li>
+              <li>
+                Тинкофф: 4377723744073390
+              </li>
+          </ul>
+      </li>
+    </ul>
+    Если у вас остались вопросы, пишите мне <a href="https://t.me/trjrjj" target="_blank">сюда</a>
+    <br>
+    Если хотите поднять свой VPN сервер, можете прочитать мой пост <a href="../blog/vpn" target="_blank">здесь</a>
+    <hr>
+    <center>
+      <p style="text-align: center; display: inline-block; font-size:150%;">
+        Общие конфиги, если у вас нет персонального и вы стесняетесь попросить его:
+      </p>
+    </center>
+    <div id="weird-boxes">
+      <ul class="booklist">
+          <li>
+            <section>
+                <p>
+                    Для первого стеснительного человека
+                    <br>
+                    <br>
+                    <a href="{{book.file}}" download>Скачать</a>
+                </p>
+            </section>   
+          </li>
+          <li>
+            <section>
+                <p>
+                    Для второго стеснительного человека
+                    <br>
+                    <br>
+                    <a href="{{book.file}}" download>Скачать</a>
+                </p>
+            </section>   
+          </li>
+          <li>
+            <section>
+                <p>
+                    Для третьего стеснительного человека
+                    <br>
+                    <br>
+                    <a href="{{book.file}}" download>Скачать</a>
+                </p>
+            </section>   
+          </li>
+          <li>
+            <section>
+                <p>
+                    Для четвертого стеснительного человека
+                    <br>
+                    <br>
+                    <a href="{{book.file}}" download>Скачать</a>
+                </p>
+            </section>   
+          </li>
+          <li>
+            <section>
+                <p>
+                    Для пятого стеснительного человека
+                    <br>
+                    <br>
+                    <a href="{{book.file}}" download>Скачать</a>
+                </p>
+            </section>   
+          </li>
+    </ul>
+      </div>
+</section>
+
+</body>
+</html>
+
+
